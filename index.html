@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F59E0B">
+  <meta name="description" content="雪梨英语：参考广州教科版主题编排的小学英语学习工具，覆盖一至六年级，含音标、例句、对话、语法、拼读与闯关练习。非商用学习项目。">
+  <title>雪梨英语 · 广州版小学英语 1–6 年级</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='56' r='34' fill='%23F59E0B'/%3E%3Cpath d='M50 22c2-10 10-14 18-15-1 9-8 15-18 15z' fill='%2310B981'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/app.css?v=7">
+  <link rel="stylesheet" href="css/story.css?v=7">
+</head>
+<body>
+  <div id="app">
+    <div class="statusbar"></div>
+    <div class="topbar hidden" id="topbar"></div>
+    <main id="view"></main>
+    <nav class="tabbar" id="tabbar" aria-label="主导航">
+      <button data-tab="home" class="on" aria-label="首页">
+        <span class="ti"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span>
+        首页
+      </button>
+      <button data-tab="course" aria-label="课程">
+        <span class="ti"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M8 6h8"/></svg></span>
+        课程
+      </button>
+      <button data-tab="practice" aria-label="练习">
+        <span class="ti"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5 17.5 10.5"/></svg></span>
+        练习
+      </button>
+      <button data-tab="me" aria-label="我的">
+        <span class="ti"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+        我的
+      </button>
+    </nav>
+  </div>
+
+  <script src="data/words-12.js?v=7"></script>
+  <script src="data/words-34.js?v=7"></script>
+  <script src="data/words-56.js?v=7"></script>
+  <script src="data/books.js?v=7"></script>
+  <script src="data/phonics.js?v=7"></script>
+  <script src="data/story.js?v=7"></script>
+  <script src="audio/manifest.js?v=7"></script>
+  <script src="js/core.js?v=7"></script>
+  <script src="js/pages-learn.js?v=7"></script>
+  <script src="js/pages-practice.js?v=7"></script>
+  <script src="js/pages-me.js?v=7"></script>
+  <script src="js/story.js?v=7"></script>
+  <script>
+    (function () {
+      var A = window.App;
+      A.replace({ name: 'home' });
+      A.$$('#tabbar button').forEach(function (b) {
+        b.onclick = function () {
+          var name = b.dataset.tab;
+          var cur = A.current;
+          if (cur && cur.name === name) { A.render(); return; }
+          A.reset({ name: name });
+        };
+      });
+    })();
+  </script>
+</body>
+</html>

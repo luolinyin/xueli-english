@@ -1,0 +1,70 @@
+// 自然拼读：26 字母 + 常见字母组合
+window.PHONICS = {
+  letters: [
+    { l: 'A', name: 'ay', sound: '/æ/', word: 'apple', zh: '苹果', tip: '嘴巴张大，像咬一口苹果' },
+    { l: 'B', name: 'bee', sound: '/b/', word: 'ball', zh: '球', tip: '双唇闭合再放开' },
+    { l: 'C', name: 'cee', sound: '/k/', word: 'cat', zh: '猫', tip: '舌根抵住软腭' },
+    { l: 'D', name: 'dee', sound: '/d/', word: 'dog', zh: '狗', tip: '舌尖抵上齿龈' },
+    { l: 'E', name: 'ee', sound: '/e/', word: 'egg', zh: '鸡蛋', tip: '嘴巴半开，短促有力' },
+    { l: 'F', name: 'ef', sound: '/f/', word: 'fish', zh: '鱼', tip: '上齿轻咬下唇' },
+    { l: 'G', name: 'gee', sound: '/ɡ/', word: 'goat', zh: '山羊', tip: '舌根爆破' },
+    { l: 'H', name: 'aitch', sound: '/h/', word: 'hat', zh: '帽子', tip: '像哈气一样' },
+    { l: 'I', name: 'eye', sound: '/ɪ/', word: 'ink', zh: '墨水', tip: '短音，嘴巴放松' },
+    { l: 'J', name: 'jay', sound: '/dʒ/', word: 'jam', zh: '果酱', tip: '像「之」的起始音' },
+    { l: 'K', name: 'kay', sound: '/k/', word: 'kite', zh: '风筝', tip: '与 c 同音' },
+    { l: 'L', name: 'el', sound: '/l/', word: 'lion', zh: '狮子', tip: '舌尖抵上齿龈' },
+    { l: 'M', name: 'em', sound: '/m/', word: 'map', zh: '地图', tip: '双唇闭拢，鼻音' },
+    { l: 'N', name: 'en', sound: '/n/', word: 'nose', zh: '鼻子', tip: '舌尖抵齿龈，鼻音' },
+    { l: 'O', name: 'oh', sound: '/ɒ/', word: 'orange', zh: '橙子', tip: '嘴巴圆圆张开' },
+    { l: 'P', name: 'pee', sound: '/p/', word: 'pen', zh: '钢笔', tip: '双唇爆破' },
+    { l: 'Q', name: 'cue', sound: '/kw/', word: 'queen', zh: '女王', tip: '常与 u 连用' },
+    { l: 'R', name: 'ar', sound: '/r/', word: 'rabbit', zh: '兔子', tip: '舌尖卷起不碰上颚' },
+    { l: 'S', name: 'ess', sound: '/s/', word: 'sun', zh: '太阳', tip: '像蛇的嘶嘶声' },
+    { l: 'T', name: 'tee', sound: '/t/', word: 'tiger', zh: '老虎', tip: '舌尖轻弹上齿龈' },
+    { l: 'U', name: 'you', sound: '/ʌ/', word: 'umbrella', zh: '雨伞', tip: '短促的「啊」' },
+    { l: 'V', name: 'vee', sound: '/v/', word: 'van', zh: '面包车', tip: '上齿轻咬下唇，声带振动' },
+    { l: 'W', name: 'double u', sound: '/w/', word: 'water', zh: '水', tip: '嘴唇收圆' },
+    { l: 'X', name: 'ex', sound: '/ks/', word: 'box', zh: '盒子', tip: '常出现在词尾' },
+    { l: 'Y', name: 'why', sound: '/j/', word: 'yellow', zh: '黄色', tip: '像「耶」的起始音' },
+    { l: 'Z', name: 'zed', sound: '/z/', word: 'zoo', zh: '动物园', tip: '像蜜蜂嗡嗡声' }
+  ],
+  blends: [
+    { l: 'sh', sound: '/ʃ/', words: ['ship', 'shop', 'fish'], zh: '船、商店、鱼', rule: 'sh 发「嘘」的音' },
+    { l: 'ch', sound: '/tʃ/', words: ['chair', 'chicken', 'lunch'], zh: '椅子、鸡、午餐', rule: 'ch 发「吃」的音' },
+    { l: 'th', sound: '/θ/ /ð/', words: ['three', 'think', 'this'], zh: '三、想、这个', rule: '舌尖伸出齿间' },
+    { l: 'ph', sound: '/f/', words: ['phone', 'photo', 'elephant'], zh: '电话、照片、大象', rule: 'ph 发 f 的音' },
+    { l: 'wh', sound: '/w/', words: ['what', 'where', 'white'], zh: '什么、哪里、白色', rule: 'wh 多用于疑问词' },
+    { l: 'ck', sound: '/k/', words: ['duck', 'clock', 'black'], zh: '鸭子、钟、黑色', rule: 'ck 常出现在短元音后' },
+    { l: 'ng', sound: '/ŋ/', words: ['sing', 'long', 'morning'], zh: '唱歌、长的、早上', rule: 'ng 是鼻音，不发 n+g' },
+    { l: 'ee', sound: '/iː/', words: ['see', 'tree', 'green'], zh: '看见、树、绿色', rule: 'ee 发长音「衣」' },
+    { l: 'ea', sound: '/iː/', words: ['tea', 'read', 'beach'], zh: '茶、读、海滩', rule: 'ea 也常发长音「衣」' },
+    { l: 'oo', sound: '/uː/ /ʊ/', words: ['moon', 'book', 'food'], zh: '月亮、书、食物', rule: 'oo 有长有短，多听多记' },
+    { l: 'ai', sound: '/eɪ/', words: ['rain', 'train', 'wait'], zh: '雨、火车、等待', rule: 'ai 发字母 A 的音' },
+    { l: 'ay', sound: '/eɪ/', words: ['day', 'play', 'today'], zh: '天、玩、今天', rule: 'ay 常在词尾' },
+    { l: 'oa', sound: '/əʊ/', words: ['boat', 'coat', 'road'], zh: '船、外套、路', rule: 'oa 发字母 O 的音' },
+    { l: 'ow', sound: '/aʊ/ /əʊ/', words: ['cow', 'flower', 'snow'], zh: '奶牛、花、雪', rule: 'ow 两种读音要分辨' },
+    { l: 'ou', sound: '/aʊ/', words: ['house', 'mouse', 'cloudy'], zh: '房子、老鼠、多云的', rule: 'ou 发「奥」的音' },
+    { l: 'oi', sound: '/ɔɪ/', words: ['boy', 'toy', 'voice'], zh: '男孩、玩具、声音', rule: 'oi/oy 发「奥衣」' },
+    { l: 'ar', sound: '/ɑː/', words: ['car', 'park', 'star'], zh: '汽车、公园、星星', rule: 'ar 发长音「啊」' },
+    { l: 'or', sound: '/ɔː/', words: ['horse', 'sport', 'morning'], zh: '马、运动、早上', rule: 'or 发「奥」的长音' },
+    { l: 'er', sound: '/ə/', words: ['water', 'tiger', 'teacher'], zh: '水、老虎、老师', rule: 'er 在词尾常弱读' },
+    { l: 'ir', sound: '/ɜː/', words: ['bird', 'girl', 'shirt'], zh: '鸟、女孩、衬衫', rule: 'ir 与 ur 同音' },
+    { l: 'ur', sound: '/ɜː/', words: ['nurse', 'turtle', 'turn'], zh: '护士、乌龟、转弯', rule: 'ur 发「饿」的长音' },
+    { l: 'igh', sound: '/aɪ/', words: ['light', 'night', 'high'], zh: '灯、夜晚、高的', rule: 'gh 不发音' },
+    { l: 'all', sound: '/ɔːl/', words: ['ball', 'small', 'tall'], zh: '球、小的、高的', rule: 'all 中的 a 读「奥」' },
+    { l: 'ing', sound: '/ɪŋ/', words: ['sing', 'ring', 'morning'], zh: '唱歌、戒指、早上', rule: '常作动词进行时词尾' }
+  ],
+  rhymes: [
+    { title: 'Hello Song', lines: ['Hello, hello, how are you?', 'Fine, fine, thank you.', 'Hello, hello, nice to meet you.', 'Hello, hello, hello to you!'], zh: '你好歌：你好，你好，你好吗？很好，很好，谢谢你。' },
+    { title: 'Colour Song', lines: ['Red and yellow, blue and green,', 'Purple, orange, pink are seen.', 'What colour? What colour?', 'Tell me what you see!'], zh: '颜色歌：红黄蓝绿紫橙粉，你看到什么颜色？' },
+    { title: 'Ten Little Fingers', lines: ['One little, two little, three little fingers,', 'Four little, five little, six little fingers,', 'Seven little, eight little, nine little fingers,', 'Ten fingers on my hands!'], zh: '十根小手指，一二三四五六七八九十。' },
+    { title: 'Rain, Rain, Go Away', lines: ['Rain, rain, go away,', 'Come again another day.', 'Little children want to play,', 'Rain, rain, go away.'], zh: '雨啊雨，走开吧，改天再来，小朋友想出去玩。' },
+    { title: 'Days of the Week', lines: ['Sunday, Monday, Tuesday, Wednesday,', 'Thursday, Friday, Saturday.', 'Seven days are in a week,', 'Let us sing them every day!'], zh: '一周七天歌，星期日到星期六。' },
+    { title: 'Twinkle, Twinkle', lines: ['Twinkle, twinkle, little star,', 'How I wonder what you are.', 'Up above the world so high,', 'Like a diamond in the sky.'], zh: '小星星：一闪一闪亮晶晶，满天都是小星星。' },
+    { title: 'Seasons', lines: ['Spring is green, summer is bright,', 'Autumn is gold, winter is white.', 'Four seasons in one year,', 'Which one do you like best?'], zh: '四季歌：春绿夏亮秋金黄，冬雪白，你最爱哪一季？' },
+    { title: 'Goodbye Song', lines: ['Goodbye, goodbye, see you again,', 'Goodbye, goodbye, my dear friend.', 'School is over, time to go,', 'See you tomorrow, hello, hello!'], zh: '再见歌：再见，我的朋友，明天见！' }
+  ]
+};
+
+// 每日任务构成与打卡目标
+window.GOALS = { words: 10, minutes: 10 };
